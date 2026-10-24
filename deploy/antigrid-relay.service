@@ -1,0 +1,14 @@
+[Unit]
+Description=Antigrid LAN HTTPS relay
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/eruin/project/antigrid
+ExecStart=/home/eruin/.local/bin/node /home/eruin/project/antigrid/deploy/run-relay-lan-https.mjs
+Restart=always
+RestartSec=3
+TimeoutStopSec=15
+
+[Install]
+WantedBy=default.target
